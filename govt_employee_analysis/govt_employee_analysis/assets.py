@@ -198,4 +198,16 @@ def reimburesment_per_person(context: AssetExecutionContext, Merged_data) -> pd.
     )
     return vouchers_per_person
 
-
+@asset
+def voucher_dist_Jan2022ToDec2023(context: AssetExecutionContext, Merged_data) -> pd.DataFrame:
+    data_df = Merged_data
+    data_df['month'] = data_df['date'].dt.to_period('M')
+    voucher_month = data_df.groupby('month')['description'].value_counts()
+    voucher_month =  pd.DataFrame(voucher_month).reset_index()
+    context.add_output_metadata(
+    metadata={
+        "num_records": len(voucher_month),
+        "preview": MetadataValue.md(voucher_month.to_markdown()),
+    }
+    )
+    return voucher_month
