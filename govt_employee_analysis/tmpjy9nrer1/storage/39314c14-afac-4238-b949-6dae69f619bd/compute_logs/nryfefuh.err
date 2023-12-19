@@ -1,0 +1,28 @@
+[32m2023-12-18 20:21:10 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 39314c14-afac-4238-b949-6dae69f619bd - 20708 - LOGS_CAPTURED - Started capturing logs in process (pid: 20708).
+[32m2023-12-18 20:21:10 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 39314c14-afac-4238-b949-6dae69f619bd - 20708 - voucher_dist_Jan2022ToDec2023 - STEP_START - Started execution of step "voucher_dist_Jan2022ToDec2023".
+[32m2023-12-18 20:21:10 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 39314c14-afac-4238-b949-6dae69f619bd - voucher_dist_Jan2022ToDec2023 - Loading file from: /Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/tmpjy9nrer1/storage/Merged_data using PickledObjectFilesystemIOManager...
+[32m2023-12-18 20:21:10 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 39314c14-afac-4238-b949-6dae69f619bd - 20708 - voucher_dist_Jan2022ToDec2023 - ASSET_OBSERVATION - DagsterEventType.ASSET_OBSERVATION for step voucher_dist_Jan2022ToDec2023
+[32m2023-12-18 20:21:10 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 39314c14-afac-4238-b949-6dae69f619bd - 20708 - voucher_dist_Jan2022ToDec2023 - LOADED_INPUT - Loaded input "Merged_data" using input manager "io_manager"
+[32m2023-12-18 20:21:10 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 39314c14-afac-4238-b949-6dae69f619bd - 20708 - voucher_dist_Jan2022ToDec2023 - STEP_INPUT - Got input "Merged_data" of type "Any". (Type check passed).
+[32m2023-12-18 20:21:10 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 39314c14-afac-4238-b949-6dae69f619bd - 20708 - voucher_dist_Jan2022ToDec2023 - STEP_FAILURE - Execution of step "voucher_dist_Jan2022ToDec2023" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "voucher_dist_Jan2022ToDec2023"::
+
+UnboundLocalError: cannot access local variable 'voucher_month' where it is not associated with a value
+
+Stack Trace:
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_utils/__init__.py", line 465, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 131, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 125, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/govt_employee_analysis/assets.py", line 207, in voucher_dist_Jan2022ToDec2023
+    voucher_month =  pd.DataFrame(voucher_month)
+                                  ^^^^^^^^^^^^^
+[0m

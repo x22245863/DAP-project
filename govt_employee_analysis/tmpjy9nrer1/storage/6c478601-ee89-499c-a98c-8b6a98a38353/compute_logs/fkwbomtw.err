@@ -1,0 +1,6 @@
+[32m2023-12-18 14:14:59 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6c478601-ee89-499c-a98c-8b6a98a38353 - 7021 - LOGS_CAPTURED - Started capturing logs in process (pid: 7021).
+[32m2023-12-18 14:14:59 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6c478601-ee89-499c-a98c-8b6a98a38353 - 7021 - csvDownload - STEP_START - Started execution of step "csvDownload".
+[32m2023-12-18 14:15:00 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6c478601-ee89-499c-a98c-8b6a98a38353 - 7021 - csvDownload - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
+[32m2023-12-18 14:15:00 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6c478601-ee89-499c-a98c-8b6a98a38353 - 7021 - csvDownload - ASSET_MATERIALIZATION - Materialized value csvDownload.
+[32m2023-12-18 14:15:00 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6c478601-ee89-499c-a98c-8b6a98a38353 - 7021 - csvDownload - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2023-12-18 14:15:00 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6c478601-ee89-499c-a98c-8b6a98a38353 - 7021 - csvDownload - STEP_SUCCESS - Finished execution of step "csvDownload" in 940ms.

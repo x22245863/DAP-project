@@ -1,0 +1,35 @@
+[32m2023-12-18 19:24:41 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d87e8d85-35ab-44da-a0b7-4731bf0b56a6 - 17998 - LOGS_CAPTURED - Started capturing logs in process (pid: 17998).
+[32m2023-12-18 19:24:41 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d87e8d85-35ab-44da-a0b7-4731bf0b56a6 - 17998 - voucher_dist_Jan2022ToDec2023 - STEP_START - Started execution of step "voucher_dist_Jan2022ToDec2023".
+[32m2023-12-18 19:24:41 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d87e8d85-35ab-44da-a0b7-4731bf0b56a6 - voucher_dist_Jan2022ToDec2023 - Loading file from: /Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/tmpjy9nrer1/storage/Merged_data using PickledObjectFilesystemIOManager...
+[32m2023-12-18 19:24:41 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d87e8d85-35ab-44da-a0b7-4731bf0b56a6 - 17998 - voucher_dist_Jan2022ToDec2023 - ASSET_OBSERVATION - DagsterEventType.ASSET_OBSERVATION for step voucher_dist_Jan2022ToDec2023
+[32m2023-12-18 19:24:41 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d87e8d85-35ab-44da-a0b7-4731bf0b56a6 - 17998 - voucher_dist_Jan2022ToDec2023 - LOADED_INPUT - Loaded input "Merged_data" using input manager "io_manager"
+[32m2023-12-18 19:24:41 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d87e8d85-35ab-44da-a0b7-4731bf0b56a6 - 17998 - voucher_dist_Jan2022ToDec2023 - STEP_INPUT - Got input "Merged_data" of type "Any". (Type check passed).
+[32m2023-12-18 19:24:41 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - d87e8d85-35ab-44da-a0b7-4731bf0b56a6 - 17998 - voucher_dist_Jan2022ToDec2023 - STEP_FAILURE - Execution of step "voucher_dist_Jan2022ToDec2023" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "voucher_dist_Jan2022ToDec2023"::
+
+ValueError: cannot insert description, already exists
+
+Stack Trace:
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_utils/__init__.py", line 465, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 131, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 125, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/govt_employee_analysis/assets.py", line 207, in voucher_dist_Jan2022ToDec2023
+    voucher_month =  pd.DataFrame(voucher_month).reset_index()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/pandas/util/_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py", line 6361, in reset_index
+    new_obj.insert(
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py", line 4817, in insert
+    raise ValueError(f"cannot insert {column}, already exists")
+[0m

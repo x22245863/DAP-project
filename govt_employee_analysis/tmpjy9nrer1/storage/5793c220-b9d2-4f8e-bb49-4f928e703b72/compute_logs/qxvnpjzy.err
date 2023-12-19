@@ -1,0 +1,6 @@
+[32m2023-12-18 12:28:49 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5793c220-b9d2-4f8e-bb49-4f928e703b72 - 3730 - LOGS_CAPTURED - Started capturing logs in process (pid: 3730).
+[32m2023-12-18 12:28:49 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5793c220-b9d2-4f8e-bb49-4f928e703b72 - 3730 - ExtractingJson - STEP_START - Started execution of step "ExtractingJson".
+[32m2023-12-18 12:28:50 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5793c220-b9d2-4f8e-bb49-4f928e703b72 - 3730 - ExtractingJson - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
+[32m2023-12-18 12:28:50 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5793c220-b9d2-4f8e-bb49-4f928e703b72 - 3730 - ExtractingJson - ASSET_MATERIALIZATION - Materialized value ExtractingJson.
+[32m2023-12-18 12:28:50 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5793c220-b9d2-4f8e-bb49-4f928e703b72 - 3730 - ExtractingJson - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2023-12-18 12:28:50 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5793c220-b9d2-4f8e-bb49-4f928e703b72 - 3730 - ExtractingJson - STEP_SUCCESS - Finished execution of step "ExtractingJson" in 1.48s.

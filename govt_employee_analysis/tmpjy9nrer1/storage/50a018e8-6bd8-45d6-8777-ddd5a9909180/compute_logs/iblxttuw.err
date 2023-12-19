@@ -1,0 +1,6 @@
+[32m2023-12-19 15:02:31 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 50a018e8-6bd8-45d6-8777-ddd5a9909180 - 31074 - LOGS_CAPTURED - Started capturing logs in process (pid: 31074).
+[32m2023-12-19 15:02:31 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 50a018e8-6bd8-45d6-8777-ddd5a9909180 - 31074 - JsonDownload - STEP_START - Started execution of step "JsonDownload".
+[32m2023-12-19 15:02:32 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 50a018e8-6bd8-45d6-8777-ddd5a9909180 - 31074 - JsonDownload - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
+[32m2023-12-19 15:02:32 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 50a018e8-6bd8-45d6-8777-ddd5a9909180 - 31074 - JsonDownload - ASSET_MATERIALIZATION - Materialized value JsonDownload.
+[32m2023-12-19 15:02:32 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 50a018e8-6bd8-45d6-8777-ddd5a9909180 - 31074 - JsonDownload - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2023-12-19 15:02:32 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 50a018e8-6bd8-45d6-8777-ddd5a9909180 - 31074 - JsonDownload - STEP_SUCCESS - Finished execution of step "JsonDownload" in 1.15s.

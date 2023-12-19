@@ -1,0 +1,35 @@
+[32m2023-12-19 14:15:03 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 90d673e3-11ed-42db-aeca-640d4a2f22ed - 28802 - LOGS_CAPTURED - Started capturing logs in process (pid: 28802).
+[32m2023-12-19 14:15:03 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 90d673e3-11ed-42db-aeca-640d4a2f22ed - 28802 - SalaryDistribPerDept - STEP_START - Started execution of step "SalaryDistribPerDept".
+[32m2023-12-19 14:15:03 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 90d673e3-11ed-42db-aeca-640d4a2f22ed - SalaryDistribPerDept - Loading file from: /Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/tmpjy9nrer1/storage/LoadingCsv using PickledObjectFilesystemIOManager...
+[32m2023-12-19 14:15:03 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 90d673e3-11ed-42db-aeca-640d4a2f22ed - 28802 - SalaryDistribPerDept - ASSET_OBSERVATION - DagsterEventType.ASSET_OBSERVATION for step SalaryDistribPerDept
+[32m2023-12-19 14:15:03 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 90d673e3-11ed-42db-aeca-640d4a2f22ed - 28802 - SalaryDistribPerDept - LOADED_INPUT - Loaded input "LoadingCsv" using input manager "io_manager"
+[32m2023-12-19 14:15:03 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 90d673e3-11ed-42db-aeca-640d4a2f22ed - 28802 - SalaryDistribPerDept - STEP_INPUT - Got input "LoadingCsv" of type "Any". (Type check passed).
+[32m2023-12-19 14:15:03 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 90d673e3-11ed-42db-aeca-640d4a2f22ed - 28802 - SalaryDistribPerDept - STEP_FAILURE - Execution of step "SalaryDistribPerDept" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "SalaryDistribPerDept"::
+
+KeyError: "['hourly rate'] not in index"
+
+Stack Trace:
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_utils/__init__.py", line 465, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 131, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 125, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+                                                                    ^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/govt_employee_analysis/assets.py", line 174, in SalaryDistribPerDept
+    "Department having highest annual salary:": MetadataValue.md(d1[['department', 'hourly rate']][d1['hourly rate'] == d1['hourly rate'].max()].reset_index(drop=True))
+                                                                 ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py", line 3813, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 6070, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 6133, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+[0m

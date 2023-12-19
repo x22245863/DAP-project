@@ -1,0 +1,10 @@
+[32m2023-12-18 14:19:37 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d15784d1-ff69-460c-a738-0d0db346cbe4 - 7368 - LOGS_CAPTURED - Started capturing logs in process (pid: 7368).
+[32m2023-12-18 14:19:37 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d15784d1-ff69-460c-a738-0d0db346cbe4 - 7368 - PercentageFullTimeAndPartTimePerDepartment - STEP_START - Started execution of step "PercentageFullTimeAndPartTimePerDepartment".
+/Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/govt_employee_analysis/assets.py:126: ExperimentalWarning:
+
+Class `MaterializeResult` is experimental. It may break in future versions, even between dot releases. To mute warnings for experimental functionality, invoke warnings.filterwarnings("ignore", category=dagster.ExperimentalWarning) or use one of the other methods described at https://docs.python.org/3/library/warnings.html#describing-warning-filters.
+
+[32m2023-12-18 14:19:38 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d15784d1-ff69-460c-a738-0d0db346cbe4 - 7368 - PercentageFullTimeAndPartTimePerDepartment - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
+[32m2023-12-18 14:19:38 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d15784d1-ff69-460c-a738-0d0db346cbe4 - 7368 - PercentageFullTimeAndPartTimePerDepartment - ASSET_MATERIALIZATION - Materialized value PercentageFullTimeAndPartTimePerDepartment.
+[32m2023-12-18 14:19:38 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d15784d1-ff69-460c-a738-0d0db346cbe4 - 7368 - PercentageFullTimeAndPartTimePerDepartment - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2023-12-18 14:19:38 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d15784d1-ff69-460c-a738-0d0db346cbe4 - 7368 - PercentageFullTimeAndPartTimePerDepartment - STEP_SUCCESS - Finished execution of step "PercentageFullTimeAndPartTimePerDepartment" in 1.15s.

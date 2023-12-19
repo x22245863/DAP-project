@@ -1,0 +1,24 @@
+[32m2023-12-18 15:31:42 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7a0cd732-59d3-44b7-963b-6132f36411db - 10816 - LOGS_CAPTURED - Started capturing logs in process (pid: 10816).
+[32m2023-12-18 15:31:42 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7a0cd732-59d3-44b7-963b-6132f36411db - 10816 - ExtractingJson - STEP_START - Started execution of step "ExtractingJson".
+[32m2023-12-18 15:31:42 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 7a0cd732-59d3-44b7-963b-6132f36411db - 10816 - ExtractingJson - STEP_FAILURE - Execution of step "ExtractingJson" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "ExtractingJson"::
+
+KeyError: 0
+
+Stack Trace:
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_utils/__init__.py", line 465, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 131, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 125, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+                                                                    ^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/govt_employee_analysis/assets.py", line 39, in ExtractingJson
+    collection.insert_one(reimburesment[i])
+                  ~~~~~~~~~~~~~^^^
+[0m

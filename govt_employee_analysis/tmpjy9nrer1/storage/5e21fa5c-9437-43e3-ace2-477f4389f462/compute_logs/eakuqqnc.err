@@ -1,0 +1,7 @@
+[32m2023-12-18 18:30:04 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5e21fa5c-9437-43e3-ace2-477f4389f462 - 15690 - LOGS_CAPTURED - Started capturing logs in process (pid: 15690).
+[32m2023-12-18 18:30:04 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5e21fa5c-9437-43e3-ace2-477f4389f462 - 15690 - JsonLoading - STEP_START - Started execution of step "JsonLoading".
+[32m2023-12-18 18:30:05 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5e21fa5c-9437-43e3-ace2-477f4389f462 - 15690 - JsonLoading - STEP_OUTPUT - Yielded output "result" of type "DataFrame". (Type check passed).
+[32m2023-12-18 18:30:05 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5e21fa5c-9437-43e3-ace2-477f4389f462 - JsonLoading - Writing file at: /Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/tmpjy9nrer1/storage/JsonLoading using PickledObjectFilesystemIOManager...
+[32m2023-12-18 18:30:05 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5e21fa5c-9437-43e3-ace2-477f4389f462 - 15690 - JsonLoading - ASSET_MATERIALIZATION - Materialized value JsonLoading.
+[32m2023-12-18 18:30:05 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5e21fa5c-9437-43e3-ace2-477f4389f462 - 15690 - JsonLoading - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2023-12-18 18:30:05 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5e21fa5c-9437-43e3-ace2-477f4389f462 - 15690 - JsonLoading - STEP_SUCCESS - Finished execution of step "JsonLoading" in 464ms.

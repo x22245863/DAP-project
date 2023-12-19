@@ -1,0 +1,21 @@
+[32m2023-12-18 19:51:40 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 78df42bb-739e-48c9-b795-3743aa5ef84f - 19365 - LOGS_CAPTURED - Started capturing logs in process (pid: 19365).
+[32m2023-12-18 19:51:40 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 78df42bb-739e-48c9-b795-3743aa5ef84f - 19365 - voucher_dist_Jan2022ToDec2023 - STEP_START - Started execution of step "voucher_dist_Jan2022ToDec2023".
+[32m2023-12-18 19:51:40 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 78df42bb-739e-48c9-b795-3743aa5ef84f - voucher_dist_Jan2022ToDec2023 - Loading file from: /Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/tmpjy9nrer1/storage/Merged_data using PickledObjectFilesystemIOManager...
+[32m2023-12-18 19:51:40 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 78df42bb-739e-48c9-b795-3743aa5ef84f - 19365 - voucher_dist_Jan2022ToDec2023 - ASSET_OBSERVATION - DagsterEventType.ASSET_OBSERVATION for step voucher_dist_Jan2022ToDec2023
+[32m2023-12-18 19:51:40 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 78df42bb-739e-48c9-b795-3743aa5ef84f - 19365 - voucher_dist_Jan2022ToDec2023 - LOADED_INPUT - Loaded input "Merged_data" using input manager "io_manager"
+[32m2023-12-18 19:51:40 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 78df42bb-739e-48c9-b795-3743aa5ef84f - 19365 - voucher_dist_Jan2022ToDec2023 - STEP_INPUT - Got input "Merged_data" of type "Any". (Type check passed).
+[32m2023-12-18 19:51:40 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 78df42bb-739e-48c9-b795-3743aa5ef84f - 19365 - voucher_dist_Jan2022ToDec2023 - STEP_OUTPUT - Yielded output "result" of type "Nothing". Warning! Type check failed.
+[32m2023-12-18 19:51:40 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 78df42bb-739e-48c9-b795-3743aa5ef84f - 19365 - voucher_dist_Jan2022ToDec2023 - STEP_FAILURE - Execution of step "voucher_dist_Jan2022ToDec2023" failed.
+
+dagster._core.errors.DagsterTypeCheckDidNotPass: Type check failed for step output "result" - expected type "Nothing". Description: Value must be None, got a <class 'pandas.core.series.Series'>
+
+Stack Trace:
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/execute_plan.py", line 286, in dagster_event_sequence_for_step
+    for step_event in check.generator(step_events):
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/execute_step.py", line 485, in core_dagster_event_sequence_for_step
+    for evt in _type_check_and_store_output(step_context, user_event):
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/execute_step.py", line 533, in _type_check_and_store_output
+    for output_event in _type_check_output(step_context, step_output_handle, output, version):
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/execute_step.py", line 405, in _type_check_output
+    raise DagsterTypeCheckDidNotPass(
+[0m

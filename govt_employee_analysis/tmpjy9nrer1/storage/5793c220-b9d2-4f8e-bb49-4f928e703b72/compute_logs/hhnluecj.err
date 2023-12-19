@@ -1,0 +1,6 @@
+[32m2023-12-18 12:28:45 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5793c220-b9d2-4f8e-bb49-4f928e703b72 - 3715 - LOGS_CAPTURED - Started capturing logs in process (pid: 3715).
+[32m2023-12-18 12:28:45 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5793c220-b9d2-4f8e-bb49-4f928e703b72 - 3715 - JsonLoad - STEP_START - Started execution of step "JsonLoad".
+[32m2023-12-18 12:28:47 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5793c220-b9d2-4f8e-bb49-4f928e703b72 - 3715 - JsonLoad - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
+[32m2023-12-18 12:28:47 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5793c220-b9d2-4f8e-bb49-4f928e703b72 - 3715 - JsonLoad - ASSET_MATERIALIZATION - Materialized value JsonLoad.
+[32m2023-12-18 12:28:47 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5793c220-b9d2-4f8e-bb49-4f928e703b72 - 3715 - JsonLoad - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2023-12-18 12:28:47 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5793c220-b9d2-4f8e-bb49-4f928e703b72 - 3715 - JsonLoad - STEP_SUCCESS - Finished execution of step "JsonLoad" in 1.05s.

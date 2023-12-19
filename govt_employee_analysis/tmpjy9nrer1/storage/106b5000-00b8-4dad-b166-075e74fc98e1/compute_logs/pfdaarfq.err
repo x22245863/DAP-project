@@ -1,0 +1,14 @@
+[32m2023-12-19 15:01:36 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 106b5000-00b8-4dad-b166-075e74fc98e1 - 31059 - LOGS_CAPTURED - Started capturing logs in process (pid: 31059).
+[32m2023-12-19 15:01:36 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 106b5000-00b8-4dad-b166-075e74fc98e1 - 31059 - ReimbursementVsDept - STEP_START - Started execution of step "ReimbursementVsDept".
+[32m2023-12-19 15:01:36 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 106b5000-00b8-4dad-b166-075e74fc98e1 - ReimbursementVsDept - Loading file from: /Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/tmpjy9nrer1/storage/JsonLoading using PickledObjectFilesystemIOManager...
+[32m2023-12-19 15:01:36 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 106b5000-00b8-4dad-b166-075e74fc98e1 - 31059 - ReimbursementVsDept - ASSET_OBSERVATION - DagsterEventType.ASSET_OBSERVATION for step ReimbursementVsDept
+[32m2023-12-19 15:01:36 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 106b5000-00b8-4dad-b166-075e74fc98e1 - 31059 - ReimbursementVsDept - LOADED_INPUT - Loaded input "JsonLoading" using input manager "io_manager"
+[32m2023-12-19 15:01:36 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 106b5000-00b8-4dad-b166-075e74fc98e1 - 31059 - ReimbursementVsDept - STEP_INPUT - Got input "JsonLoading" of type "Any". (Type check passed).
+/Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/govt_employee_analysis/assets.py:78: ExperimentalWarning:
+
+Class `MaterializeResult` is experimental. It may break in future versions, even between dot releases. To mute warnings for experimental functionality, invoke warnings.filterwarnings("ignore", category=dagster.ExperimentalWarning) or use one of the other methods described at https://docs.python.org/3/library/warnings.html#describing-warning-filters.
+
+[32m2023-12-19 15:01:37 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 106b5000-00b8-4dad-b166-075e74fc98e1 - 31059 - ReimbursementVsDept - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
+[32m2023-12-19 15:01:37 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 106b5000-00b8-4dad-b166-075e74fc98e1 - 31059 - ReimbursementVsDept - ASSET_MATERIALIZATION - Materialized value ReimbursementVsDept.
+[32m2023-12-19 15:01:37 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 106b5000-00b8-4dad-b166-075e74fc98e1 - 31059 - ReimbursementVsDept - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2023-12-19 15:01:37 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 106b5000-00b8-4dad-b166-075e74fc98e1 - 31059 - ReimbursementVsDept - STEP_SUCCESS - Finished execution of step "ReimbursementVsDept" in 740ms.

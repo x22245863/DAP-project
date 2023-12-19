@@ -1,0 +1,6 @@
+[32m2023-12-18 12:39:59 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7be4409e-c715-4d90-a488-d18696b8ceaa - 4065 - LOGS_CAPTURED - Started capturing logs in process (pid: 4065).
+[32m2023-12-18 12:39:59 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7be4409e-c715-4d90-a488-d18696b8ceaa - 4065 - ExtractingCsv - STEP_START - Started execution of step "ExtractingCsv".
+[32m2023-12-18 12:40:00 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7be4409e-c715-4d90-a488-d18696b8ceaa - 4065 - ExtractingCsv - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
+[32m2023-12-18 12:40:00 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7be4409e-c715-4d90-a488-d18696b8ceaa - 4065 - ExtractingCsv - ASSET_MATERIALIZATION - Materialized value ExtractingCsv.
+[32m2023-12-18 12:40:00 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7be4409e-c715-4d90-a488-d18696b8ceaa - 4065 - ExtractingCsv - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2023-12-18 12:40:00 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7be4409e-c715-4d90-a488-d18696b8ceaa - 4065 - ExtractingCsv - STEP_SUCCESS - Finished execution of step "ExtractingCsv" in 793ms.

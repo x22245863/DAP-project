@@ -1,0 +1,7 @@
+[32m2023-12-18 15:35:15 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b421ab63-f1b1-4197-8f33-9d5506c924ed - 11091 - LOGS_CAPTURED - Started capturing logs in process (pid: 11091).
+[32m2023-12-18 15:35:15 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b421ab63-f1b1-4197-8f33-9d5506c924ed - 11091 - LoadingCsv - STEP_START - Started execution of step "LoadingCsv".
+[32m2023-12-18 15:35:15 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b421ab63-f1b1-4197-8f33-9d5506c924ed - 11091 - LoadingCsv - STEP_OUTPUT - Yielded output "result" of type "DataFrame". (Type check passed).
+[32m2023-12-18 15:35:15 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b421ab63-f1b1-4197-8f33-9d5506c924ed - LoadingCsv - Writing file at: /Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/tmpjy9nrer1/storage/LoadingCsv using PickledObjectFilesystemIOManager...
+[32m2023-12-18 15:35:15 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b421ab63-f1b1-4197-8f33-9d5506c924ed - 11091 - LoadingCsv - ASSET_MATERIALIZATION - Materialized value LoadingCsv.
+[32m2023-12-18 15:35:15 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b421ab63-f1b1-4197-8f33-9d5506c924ed - 11091 - LoadingCsv - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2023-12-18 15:35:15 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b421ab63-f1b1-4197-8f33-9d5506c924ed - 11091 - LoadingCsv - STEP_SUCCESS - Finished execution of step "LoadingCsv" in 103ms.

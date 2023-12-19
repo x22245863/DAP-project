@@ -1,0 +1,36 @@
+[32m2023-12-19 16:11:31 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 02a5538d-72ac-47ca-852b-1c17839b584a - 34215 - LOGS_CAPTURED - Started capturing logs in process (pid: 34215).
+[32m2023-12-19 16:11:31 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 02a5538d-72ac-47ca-852b-1c17839b584a - 34215 - ReimbursementVsDept - STEP_START - Started execution of step "ReimbursementVsDept".
+[32m2023-12-19 16:11:31 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 02a5538d-72ac-47ca-852b-1c17839b584a - ReimbursementVsDept - Loading file from: /Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/tmpjy9nrer1/storage/JsonLoading using PickledObjectFilesystemIOManager...
+[32m2023-12-19 16:11:31 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 02a5538d-72ac-47ca-852b-1c17839b584a - 34215 - ReimbursementVsDept - ASSET_OBSERVATION - DagsterEventType.ASSET_OBSERVATION for step ReimbursementVsDept
+[32m2023-12-19 16:11:31 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 02a5538d-72ac-47ca-852b-1c17839b584a - 34215 - ReimbursementVsDept - LOADED_INPUT - Loaded input "JsonLoading" using input manager "io_manager"
+[32m2023-12-19 16:11:31 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 02a5538d-72ac-47ca-852b-1c17839b584a - 34215 - ReimbursementVsDept - STEP_INPUT - Got input "JsonLoading" of type "Any". (Type check passed).
+[32m2023-12-19 16:11:31 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 02a5538d-72ac-47ca-852b-1c17839b584a - 34215 - ReimbursementVsDept - STEP_FAILURE - Execution of step "ReimbursementVsDept" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "ReimbursementVsDept"::
+
+TypeError: Column 'amount' has dtype object, cannot use method 'nlargest' with this dtype
+
+Stack Trace:
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_utils/__init__.py", line 465, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 131, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 125, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+                                                                    ^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/govt_employee_analysis/assets.py", line 74, in ReimbursementVsDept
+    d3 = reimburesment_df.nlargest(20, 'amount')[['department', 'amount']]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py", line 7338, in nlargest
+    return algorithms.SelectNFrame(self, n=n, keep=keep, columns=columns).nlargest()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/pandas/core/algorithms.py", line 1277, in nlargest
+    return self.compute("nlargest")
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/pandas/core/algorithms.py", line 1408, in compute
+    raise TypeError(
+[0m

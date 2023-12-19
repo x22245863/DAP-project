@@ -1,0 +1,37 @@
+[32m2023-12-19 14:19:08 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 170e8194-b3e7-4eda-b517-46cc54baa97f - 28971 - LOGS_CAPTURED - Started capturing logs in process (pid: 28971).
+[32m2023-12-19 14:19:08 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 170e8194-b3e7-4eda-b517-46cc54baa97f - 28971 - SalaryDistribPerDept - STEP_START - Started execution of step "SalaryDistribPerDept".
+[32m2023-12-19 14:19:08 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 170e8194-b3e7-4eda-b517-46cc54baa97f - SalaryDistribPerDept - Loading file from: /Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/tmpjy9nrer1/storage/LoadingCsv using PickledObjectFilesystemIOManager...
+[32m2023-12-19 14:19:08 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 170e8194-b3e7-4eda-b517-46cc54baa97f - 28971 - SalaryDistribPerDept - ASSET_OBSERVATION - DagsterEventType.ASSET_OBSERVATION for step SalaryDistribPerDept
+[32m2023-12-19 14:19:08 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 170e8194-b3e7-4eda-b517-46cc54baa97f - 28971 - SalaryDistribPerDept - LOADED_INPUT - Loaded input "LoadingCsv" using input manager "io_manager"
+[32m2023-12-19 14:19:08 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 170e8194-b3e7-4eda-b517-46cc54baa97f - 28971 - SalaryDistribPerDept - STEP_INPUT - Got input "LoadingCsv" of type "Any". (Type check passed).
+[32m2023-12-19 14:19:08 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 170e8194-b3e7-4eda-b517-46cc54baa97f - 28971 - SalaryDistribPerDept - STEP_FAILURE - Execution of step "SalaryDistribPerDept" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "SalaryDistribPerDept"::
+
+dagster._check.ParameterCheckError: Param "md_str" is not a str. Got                     department  hourly_rate
+0  DEPARTMENT OF PUBLIC HEALTH         64.3 which is type <class 'pandas.core.frame.DataFrame'>.
+
+Stack Trace:
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_utils/__init__.py", line 465, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 131, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 125, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+                                                                    ^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/govt_employee_analysis/assets.py", line 174, in SalaryDistribPerDept
+    "Department having highest hourly salary:": MetadataValue.md(d2[['department', 'hourly_rate']][d2['hourly_rate'] == d2['hourly_rate'].max()].reset_index(drop=True))
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/definitions/metadata/__init__.py", line 308, in md
+    return MarkdownMetadataValue(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/definitions/metadata/__init__.py", line 718, in __new__
+    cls, check.opt_str_param(md_str, "md_str", default="")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_check/__init__.py", line 1333, in opt_str_param
+    raise _param_type_mismatch_exception(obj, str, param_name, additional_message)
+[0m

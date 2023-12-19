@@ -1,0 +1,44 @@
+[32m2023-12-19 14:07:50 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c8f973bf-fab2-4c88-94ca-5b45cc7a70b8 - 28595 - LOGS_CAPTURED - Started capturing logs in process (pid: 28595).
+[32m2023-12-19 14:07:50 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c8f973bf-fab2-4c88-94ca-5b45cc7a70b8 - 28595 - SalaryDistribPerDept - STEP_START - Started execution of step "SalaryDistribPerDept".
+[32m2023-12-19 14:07:50 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c8f973bf-fab2-4c88-94ca-5b45cc7a70b8 - SalaryDistribPerDept - Loading file from: /Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/tmpjy9nrer1/storage/LoadingCsv using PickledObjectFilesystemIOManager...
+[32m2023-12-19 14:07:50 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c8f973bf-fab2-4c88-94ca-5b45cc7a70b8 - 28595 - SalaryDistribPerDept - ASSET_OBSERVATION - DagsterEventType.ASSET_OBSERVATION for step SalaryDistribPerDept
+[32m2023-12-19 14:07:50 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c8f973bf-fab2-4c88-94ca-5b45cc7a70b8 - 28595 - SalaryDistribPerDept - LOADED_INPUT - Loaded input "LoadingCsv" using input manager "io_manager"
+[32m2023-12-19 14:07:50 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c8f973bf-fab2-4c88-94ca-5b45cc7a70b8 - 28595 - SalaryDistribPerDept - STEP_INPUT - Got input "LoadingCsv" of type "Any". (Type check passed).
+[32m2023-12-19 14:07:50 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - c8f973bf-fab2-4c88-94ca-5b45cc7a70b8 - 28595 - SalaryDistribPerDept - STEP_FAILURE - Execution of step "SalaryDistribPerDept" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "SalaryDistribPerDept"::
+
+KeyError: 121251.0
+
+Stack Trace:
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_utils/__init__.py", line 465, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 131, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 125, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+                                                                    ^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/dap_dagster_project/DAP-project/govt_employee_analysis/govt_employee_analysis/assets.py", line 174, in SalaryDistribPerDept
+    "Department having highest annual salary:": MetadataValue.md(d1['department'][d1['annual_salary'].max()])
+                                                                 ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/pandas/core/series.py", line 981, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/pandas/core/series.py", line 1089, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/pandas/core/indexes/range.py", line 393, in get_loc
+    raise KeyError(key) from err
+
+The above exception was caused by the following exception:
+ValueError: 121251 is not in range
+
+Stack Trace:
+  File "/Users/nirmalgeorge/anaconda3/lib/python3.11/site-packages/pandas/core/indexes/range.py", line 391, in get_loc
+    return self._range.index(new_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0m
